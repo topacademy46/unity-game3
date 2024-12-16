@@ -1,16 +1,20 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.D)) {
-            Debug.Log("Нажали D");
-        }
+    [SerializeField] private float moveSpeed;
+
+    private void Update() {
+        Move();
+    }
+
+    private void Move() {
         if (Input.GetKey(KeyCode.D)) {
-            Debug.Log("Зажали D");
+            transform.position = new Vector3(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
-        if (Input.GetKeyUp(KeyCode.D)) {
-            Debug.Log("Отжали D");
+        if (Input.GetKey(KeyCode.A)) {
+            transform.position = new Vector3(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
     }
 }
