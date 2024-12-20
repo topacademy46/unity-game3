@@ -18,4 +18,8 @@ public class HealthComponent : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
+
+    public void takeDamage(float damage) {
+        currentHealth -= damage;
+    }
 }

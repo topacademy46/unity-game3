@@ -25,14 +25,7 @@ public class Movement : MonoBehaviour
     }
 
     private void Move() {
-        if (inputService.getHorizontalDirection() > 0) {
-            // rb.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Impulse);
-            rb.linearVelocityX += moveSpeed;
-        }
-        if (inputService.getHorizontalDirection() < 0) { 
-            rb.linearVelocityX -= moveSpeed;
-            // rb.AddForce(new Vector2(moveSpeed * -1, 0), ForceMode2D.Impulse);
-        }
+        rb.linearVelocity = new Vector2(moveSpeed * inputService.getHorizontalDirection(), rb.linearVelocityY);
     }
 
     private void FlipX() {
