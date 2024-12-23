@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Keypad1)) {
+        if (Input.GetKey(KeyCode.Mouse0)) {
             Instantiate(fireBall, transform.position, Quaternion.identity);
         }
     }
